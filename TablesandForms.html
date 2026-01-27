@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Pizza Ordering Form</title>
+</head>
+<body>
+
+<h1>Pizza Ordering Form</h1>
+
+<form>
+  <h2>Contact Information</h2>
+  <label>Name: <input name="name" required></label><br>
+  <label>Phone: <input name="phone" type="tel" required></label><br>
+  <label>Email: <input name="email" type="email" required></label><br>
+
+  <h2>Select Pizza Size</h2>
+  <label>Pizza Size:
+    <select name="size" required>
+      <option value="">--Select Size--</option>
+      <option>Medium</option>
+      <option>Large</option>
+      <option>XLarge</option>
+    </select>
+  </label>
+
+  <h2>Select Sauce</h2>
+  <label><input type="radio" name="sauce" value="marinara" required> Marinara</label><br>
+  <label><input type="radio" name="sauce" value="ranch"> Ranch</label><br>
+  <label><input type="radio" name="sauce" value="none"> No Sauce</label><br>
+
+  <h2>Select Toppings</h2>
+  <label><input type="checkbox" name="top" value="pepperoni"> Pepperoni</label>
+  <label><input type="checkbox" name="top" value="sausage"> Sausage</label><br>
+  <label><input type="checkbox" name="top" value="mushroom"> Mushrooms</label>
+  <label><input type="checkbox" name="top" value="pineapple"> Pineapple</label><br>
+  <label><input type="checkbox" name="top" value="peppers"> Peppers</label>
+  <label><input type="checkbox" name="top" value="onions"> Onions</label><br>
+
+  <h2>Additional Instructions</h2>
+  <textarea name="notes" rows="4" cols="25">Add instructions</textarea><br>
+  <button type="submit">Submit</button>
+</form>
+
+<h2>List of My Favorite Games</h2>
+
+<table border="1">
+  <tr>
+    <th>Developer</th>
+    <th>Title</th>
+    <th>Year</th>
+  </tr>
+  <tr>
+    <td rowspan="2">Rockstar Games</td>
+    <td>Red Dead Redemption 2</td>
+    <td>2018</td>
+  </tr>
+  <tr>
+    <td>Batman: Arkham Knight</td>
+    <td>2015</td>
+  </tr>
+  <tr>
+    <td>Santa Monica Studio</td>
+    <td>God of War</td>
+    <td>2018</td>
+  </tr>
+  <tr>
+    <td>Techland</td>
+    <td>Dying Light</td>
+    <td>2015</td>
+  </tr>
+  <tr>
+    <td colspan="3">Count: 4</td>
+  </tr>
+</table>
+
+</body>
+</html>
