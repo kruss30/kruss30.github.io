@@ -1,1 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>eCitadel Blue Team Defense (headman)</title>
+</head>
+<body>
 
+<header>
+  <h1>Project 2</h1>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="pizza.html">Pizza Form</a> |
+    <a href="resume.html">Resume</a> |
+    <a href="project1.html">Project 1</a> |
+    <a href="project2.html">Project 2</a>
+  </nav>
+  <hr>
+</header>
+
+<main>
+  <article>
+    <h2>eCitadel Blue Team Competition (Windows Server 2022 Domain Controller)</h2>
+
+    <figure>
+      <img src="images/project2.png" alt="Screenshot of documentation or network map from the eCitadel competition" width="600">
+      <figcaption>Documentation from the eCitadel blue team event (image added later).</figcaption>
+    </figure>
+
+    <section>
+      <h3>Description</h3>
+      <p>
+        In the eCitadel Cyber Challenge, I worked primarily on the Windows Server 2022 machine
+        named headman, which served as the Active Directory Domain Controller and hosted a scored
+        DNS service. The goal was to investigate an active security incident, remove malicious
+        activity, and harden systems while keeping critical services available.
+      </p>
+    </section>
+
+    <section>
+      <h3>Key Actions and Results</h3>
+      <ul>
+        <li>Identified and removed a Sliver C2 beacon on headman and blocked attacker traffic with firewall rules.</li>
+        <li>Audited users and permissions and removed unauthorized access to reduce risk and configuration drift.</li>
+        <li>Configured Windows audit logging to restore visibility into authentication and system activity.</li>
+        <li>Restored Windows Defender functionality and securely configured Windows Defender Firewall settings.</li>
+        <li>Hardened core services by securing DNS and RDP configurations and removing legacy components such as SMBv1.</li>
+        <li>Reviewed and secured Active Directory configuration and updated user passwords as part of remediation.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>Skills Learned</h3>
+      <ul>
+        <li>Windows Server 2022 hardening and defensive configuration</li>
+        <li>Incident response triage and malware removal workflow</li>
+        <li>Windows logging and audit policy configuration</li>
+        <li>Firewall rule design for service uptime and containment</li>
+        <li>Active Directory and DNS security fundamentals in a scored environment</li>
+      </ul>
+    </section>
+  </article>
+</main>
+
+<footer>
+  <hr>
+  <p><a href="resume.html">Back to Resume</a></p>
+</footer>
+
+</body>
+</html>
