@@ -1,119 +1,84 @@
-/* page */
+/* note: genai was used as a reference for css syntax and layout ideas.
+   final styling choices and adjustments were made by me. */
 body {
+  background-color: #a8d4e6;
   margin: 0;
-  padding: 0;
-  background: #a8d4e6;
   font-family: Arial, Helvetica, sans-serif;
-  color: #000;
+  color: black;
 }
 
-/* main title */
 h1 {
   text-align: center;
-  font-size: 64px;
-  margin: 28px 0 10px 0;
-  font-weight: 800;
+  font-size: 58px;
+  margin: 30px 0 15px 0;
 }
 
-/* section headers */
 h2 {
-  font-size: 34px;
-  margin: 22px 0 10px 12px;
-  font-weight: 800;
+  font-size: 32px;
+  margin: 20px 0 10px 12px;
 }
 
 h3 {
   font-size: 22px;
-  margin: 22px 0 10px 12px;
-  font-weight: 800;
+  margin: 25px 0 10px 12px;
 }
 
-/* paragraphs */
 p {
-  margin: 0 12px 14px 12px;
-  font-size: 13px;
-  line-height: 1.45;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 12px 15px 12px;
 }
 
-/* special bordered paragraph (slightly indented left, not centered) */
 #paragraph2 {
-  background: #ffffff;
-  border: 4px solid #0d7a1f;
-  padding: 18px 26px;
-  width: 72%;
-  margin-top: 14px;
-  margin-bottom: 18px;
-  margin-left: 44px;  /* key: slight indent like the reference */
-  margin-right: 0;
-  line-height: 1.9;
+  background-color: white;
+  border: 4px solid green;
+  width: 70%;
+  padding: 18px 24px;
+  margin: 15px 0 20px 40px;
+  line-height: 1.8;
 }
 
-/* blue paragraphs (4th and 5th) */
 .blue {
-  background: #0a1a7a;
-  color: #ffffff;
-
-  /* tighter box fit */
+  background-color: #0a1a7a;
+  color: white;
   padding: 8px 12px;
-  margin: 8px 12px;
-  border: 1px solid #000;
+  margin: 10px 12px;
 }
 
-/* base link color */
-a:link,
-a:visited {
-  color: #1e43c5;
-}
-
-a:hover {
-  color: #0f2a8f;
-}
-
-/* list block */
 ol {
   list-style-type: decimal-leading-zero;
-  list-style-position: inside; /* reduces indent */
-  margin: 0 0 18px 12px;
+  margin: 0 0 20px 12px;
   padding-left: 0;
 }
 
 ol li {
-  margin: 2px 0;
-  font-size: 14px;
+  margin-bottom: 4px;
 }
 
-/* keep list item links blue (explicit) */
-ol a:link,
-ol a:visited {
+ol a {
   color: #1e43c5;
 }
 
-/* make ONLY the w3schools paragraph link red */
-article:nth-of-type(2) section p a:link,
-article:nth-of-type(2) section p a:visited {
+section p a {
   color: #b01b1b;
 }
 
-/* table */
+
 table {
-  margin: 10px 0 30px 12px;
+  border-collapse: collapse;
   width: 520px;
-  border-collapse: collapse; /* overlapping borders */
-  font-size: 13px;
+  margin: 10px 0 30px 12px;
 }
 
-th,
-td {
-  border: 1px solid #000; /* applies to all cells */
+th, td {
+  border: 1px solid black;
   padding: 6px 8px;
-  vertical-align: top;
 }
 
 th {
-  background: #bfbfbf; /* header background */
-  font-weight: 700;
+  background-color: #bfbfbf;
 }
 
 td {
-  background: #ffffff; /* cell background */
+  background-color: white;
 }
