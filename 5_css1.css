@@ -47,8 +47,9 @@ p {
 
 ol {
   list-style-type: decimal-leading-zero;
+  list-style-position: inside;
   margin: 0 0 20px 12px;
-  padding-left: 28px;
+  padding-left: 0px;
 }
 
 ol li {
