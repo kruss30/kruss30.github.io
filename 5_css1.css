@@ -35,38 +35,31 @@ p {
   line-height: 1.45;
 }
 
-/* special bordered paragraph */
+/* special bordered paragraph (slightly indented left, not centered) */
 #paragraph2 {
   background: #ffffff;
   border: 4px solid #0d7a1f;
   padding: 18px 26px;
-  width: 56%;
-  margin: 14px auto 18px auto;
+  width: 72%;
+  margin-top: 14px;
+  margin-bottom: 18px;
+  margin-left: 44px;  /* key: slight indent like the reference */
+  margin-right: 0;
   line-height: 1.9;
 }
 
-/* blue paragraphs */
+/* blue paragraphs (4th and 5th) */
 .blue {
   background: #0a1a7a;
   color: #ffffff;
-  padding: 10px 12px;
-  margin: 0 12px 12px 12px;
+
+  /* tighter box fit */
+  padding: 8px 12px;
+  margin: 8px 12px;
   border: 1px solid #000;
 }
 
-/* ordered list */
-ol {
-  margin: 0 0 18px 30px;
-  padding-left: 22px;
-  list-style-type: decimal-leading-zero;
-}
-
-ol li {
-  margin: 2px 0;
-  font-size: 14px;
-}
-
-/* default link color */
+/* base link color */
 a:link,
 a:visited {
   color: #1e43c5;
@@ -76,9 +69,28 @@ a:hover {
   color: #0f2a8f;
 }
 
-/* w3schools link */
-section p a:link,
-section p a:visited {
+/* list block */
+ol {
+  list-style-type: decimal-leading-zero;
+  list-style-position: inside; /* reduces indent */
+  margin: 0 0 18px 12px;
+  padding-left: 0;
+}
+
+ol li {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+/* keep list item links blue (explicit) */
+ol a:link,
+ol a:visited {
+  color: #1e43c5;
+}
+
+/* make ONLY the w3schools paragraph link red */
+article:nth-of-type(2) section p a:link,
+article:nth-of-type(2) section p a:visited {
   color: #b01b1b;
 }
 
@@ -86,22 +98,22 @@ section p a:visited {
 table {
   margin: 10px 0 30px 12px;
   width: 520px;
-  border-collapse: collapse;
+  border-collapse: collapse; /* overlapping borders */
   font-size: 13px;
 }
 
 th,
 td {
-  border: 1px solid #000;
+  border: 1px solid #000; /* applies to all cells */
   padding: 6px 8px;
   vertical-align: top;
 }
 
 th {
-  background: #bfbfbf;
+  background: #bfbfbf; /* header background */
   font-weight: 700;
 }
 
 td {
-  background: #ffffff;
+  background: #ffffff; /* cell background */
 }
