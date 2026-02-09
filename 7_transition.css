@@ -1,6 +1,6 @@
 /*genai was used as a reference for css selectors and transition ideas. final styling choices, selector decisions, and refinements were made by me.*/
 
-/*base reset*/
+/*base*/
 *{
   box-sizing: border-box;
 }
@@ -27,7 +27,7 @@ body{
   --ucf-black: #000000;
   --ucf-white: #ffffff;
 
-  /*article text states*/
+  /*article text*/
   --lighttext: #b7b7b7;
   --darktext: #1b1b1b;
 }
@@ -56,13 +56,13 @@ body{
   cursor: pointer;
 }
 
-/*hover color change for navigation buttons*/
+/*hover color change*/
 #menuItems button:hover{
   background: var(--ucf-white);
   color: var(--ucf-black);
 }
 
-/*recent articles dropdown container*/
+/*recent articles dropdown*/
 #jumpMenu{
   list-style: none;
   padding: 0;
@@ -72,12 +72,12 @@ body{
   border-bottom: 2px solid var(--ucf-black);
 }
 
-/*show dropdown only when hovering recent articles button*/
+/*show dropdown only when hovering*/
 #recentArticles:hover + #jumpMenu{
   display: block;
 }
 
-/*keep dropdown visible while hovering it*/
+/*keep dropdown visible while hovering*/
 #jumpMenu:hover{
   display: block;
 }
@@ -96,7 +96,7 @@ body{
   font-size: 18px;
 }
 
-/*hover style for dropdown links*/
+/*hover style*/
 #jumpMenu a:hover{
   background: var(--ucf-black);
   color: var(--ucf-gold);
@@ -162,7 +162,7 @@ main h1{
   scroll-margin-top: calc(var(--headerh) + 24px);
 }
 
-/*lightly-colored article text by default*/
+/*lc article text by default*/
 #container article p:first-of-type{
   color: var(--lighttext);
   line-height: 1.55;
@@ -178,13 +178,13 @@ main h1{
   color: var(--darktext);
 }
 
-/*first letter styling for main article text only (not read more)*/
+/*first letter styling for main article text*/
 #container article p:first-of-type::first-letter{
   font-family: "Times New Roman", Times, serif;
   font-size: 36px;
 }
 
-/*read more links should not inherit the light/dark paragraph text*/
+/*read more links*/
 #container article p:last-of-type{
   margin: 10px 0 0 0;
 }
