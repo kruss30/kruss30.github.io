@@ -196,7 +196,7 @@ main h1{
 }
 
 /*arrow image to the right of google links*/
-a[href^="https://www.google.com"]::after{
+a[href*="google.com"]::after{
   content: "";
   display: inline-block;
   width: 18px;
