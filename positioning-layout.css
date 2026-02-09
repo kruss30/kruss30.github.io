@@ -8,25 +8,27 @@
   --pad: 26px;
   --gap: 24px;
 
-  --pagebg: #f7f6f3;
+  /*ucf theme*/
+  --ucf-gold: #ffc904;
+  --ucf-black: #000000;
+  --ucf-white: #ffffff;
+
+  /*page + components*/
+  --pagebg: #ffffff;
   --text: #111111;
 
-  --ucf-gold: #ffc904;
-  --ucf-green: #006241;
-  --ucf-dark: #003a2c;
-
   --menubg: var(--ucf-gold);
-  --menulink: #003366;
+  --menulink: var(--ucf-black);
 
-  --headerbg: var(--ucf-green);
-  --btnbg: var(--ucf-dark);
-  --btntext: #ffffff;
+  --headerbg: var(--ucf-black);
+  --btnbg: var(--ucf-gold);
+  --btntext: var(--ucf-black);
 
-  --cardbg: #ffffff;
-  --cardborder: #d8d2c3;
+  --cardbg: var(--ucf-white);
+  --cardborder: #d6d6d6;
 
-  --thanksbg: #e6f2ee;
-  --thanksborder: var(--ucf-green);
+  --thanksbg: var(--ucf-white);
+  --thanksborder: var(--ucf-black);
 }
 
 *{
@@ -61,13 +63,14 @@ body{
   margin: 0 0 14px 0;
   font-size: 30px;
   font-family: Georgia, "Times New Roman", serif;
+  color: var(--ucf-black);
 }
 
 #jumpMenu a{
   display: block;
   padding: 10px 6px;
   font-size: 18px;
-  color: var(--menulink);
+  color: var(--ucf-black);
   text-decoration: underline;
 }
 
@@ -89,13 +92,14 @@ main header{
   justify-content: center;
   align-items: center;
   text-align: center;
+  border-bottom: 3px solid var(--ucf-gold);
 }
 
 main header p{
   margin: 0;
   font-size: 30px;
   font-weight: bold;
-  color: var(--btntext);
+  color: var(--ucf-white);
 }
 
 main header nav{
@@ -106,7 +110,7 @@ main header nav{
 main header button{
   background: var(--btnbg);
   color: var(--btntext);
-  border: 1px solid rgba(255,255,255,0.35);
+  border: 2px solid var(--ucf-black);
   padding: 10px 20px;
   margin: 0 8px;
   cursor: pointer;
@@ -114,7 +118,7 @@ main header button{
 }
 
 main header button:hover{
-  filter: brightness(1.1);
+  filter: brightness(1.06);
 }
 
 /*main content offset for fixed elements*/
@@ -131,6 +135,7 @@ main h1{
   font-size: 48px;
   margin: 20px 0 28px 0;
   font-family: Georgia, "Times New Roman", serif;
+  color: var(--ucf-black);
 }
 
 /*responsive article layout with fixed card width*/
@@ -153,6 +158,7 @@ main h1{
 #container article h2{
   margin: 0 0 10px 0;
   font-size: 22px;
+  color: var(--ucf-black);
 }
 
 #container article p{
@@ -161,7 +167,7 @@ main h1{
 }
 
 #container article a{
-  color: var(--menulink);
+  color: var(--ucf-black);
 }
 
 /*thank you message fixed bottom right*/
@@ -171,10 +177,11 @@ main h1{
   bottom: 16px;
   z-index: 1100;
   background: var(--thanksbg);
-  border: 2px solid var(--thanksborder);
+  border: 3px solid var(--thanksborder);
   padding: 16px 24px;
   font-size: 30px;
   font-family: Georgia, "Times New Roman", serif;
+  color: var(--ucf-black);
 }
 
 /*footer remains in normal document flow*/
