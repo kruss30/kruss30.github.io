@@ -8,12 +8,12 @@
   --pad: 26px;
   --gap: 24px;
 
-  /*ucf theme*/
+  /*ucf colors*/
   --ucf-gold: #ffc904;
   --ucf-black: #000000;
   --ucf-white: #ffffff;
 
-  /*page + components*/
+  /*page*/
   --pagebg: #ffffff;
   --text: #111111;
 
@@ -78,7 +78,7 @@ body{
   filter: brightness(0.85);
 }
 
-/*fixed header centered in remaining horizontal space*/
+/*fixed header centered*/
 main header{
   position: fixed;
   top: 0;
@@ -106,7 +106,7 @@ main header nav{
   margin-top: 12px;
 }
 
-/*navigation buttons styled for visual consistency*/
+/*navigation buttons*/
 main header button{
   background: var(--btnbg);
   color: var(--btntext);
@@ -121,7 +121,7 @@ main header button:hover{
   filter: brightness(1.06);
 }
 
-/*main content offset for fixed elements*/
+/*main content offset*/
 main{
   margin-left: var(--menuw);
   padding-top: calc(var(--headerh) + 26px);
@@ -138,7 +138,7 @@ main h1{
   color: var(--ucf-black);
 }
 
-/*responsive article layout with fixed card width*/
+/*article fixed card width*/
 #container{
   display: flex;
   flex-wrap: wrap;
@@ -184,13 +184,13 @@ main h1{
   color: var(--ucf-black);
 }
 
-/*footer remains in normal document flow*/
+/*footer*/
 footer{
   margin-top: 60px;
   padding: 18px 12px;
 }
 
-/*responsive adjustment for narrow screens*/
+/*narrow adjustment*/
 @media (max-width: 720px){
   :root{
     --menuw: 180px;
