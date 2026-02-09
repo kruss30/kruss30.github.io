@@ -1,0 +1,203 @@
+/*ai assistance disclosure: genai was used as a reference for css positioning concepts and syntax. final color choices, layout decisions, and refinements were made by me.*/
+
+/*ucf color palette and layout variables*/
+:root{
+  --menuw: 15%;
+  --menuwmin: 180px;
+  --headerh: 120px;
+  --pad: 26px;
+  --gap: 24px;
+
+  --pagebg: #f7f6f3;
+  --text: #111111;
+
+  --ucf-gold: #ffc904;
+  --ucf-green: #006241;
+  --ucf-dark: #003a2c;
+
+  --menubg: var(--ucf-gold);
+  --menulink: #003366;
+
+  --headerbg: var(--ucf-green);
+  --btnbg: var(--ucf-dark);
+  --btntext: #ffffff;
+
+  --cardbg: #ffffff;
+  --cardborder: #d8d2c3;
+
+  --thanksbg: #e6f2ee;
+  --thanksborder: var(--ucf-green);
+}
+
+*{
+  box-sizing: border-box;
+}
+
+html, body{
+  height: 100%;
+  margin: 0;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--pagebg);
+  color: var(--text);
+}
+
+/*left jump menu fixed full height*/
+#jumpMenu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: var(--menuw);
+  min-width: var(--menuwmin);
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--menubg);
+  padding: 20px 18px;
+}
+
+#jumpMenu h2{
+  margin: 0 0 14px 0;
+  font-size: 30px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+#jumpMenu a{
+  display: block;
+  padding: 10px 6px;
+  font-size: 18px;
+  color: var(--menulink);
+  text-decoration: underline;
+}
+
+#jumpMenu a:hover{
+  filter: brightness(0.85);
+}
+
+/*fixed header centered in remaining horizontal space*/
+main header{
+  position: fixed;
+  top: 0;
+  left: var(--menuw);
+  width: calc(100% - var(--menuw));
+  height: var(--headerh);
+  z-index: 1000;
+  background: var(--headerbg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+main header p{
+  margin: 0;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--btntext);
+}
+
+main header nav{
+  margin-top: 12px;
+}
+
+/*navigation buttons styled for visual consistency*/
+main header button{
+  background: var(--btnbg);
+  color: var(--btntext);
+  border: 1px solid rgba(255,255,255,0.35);
+  padding: 10px 20px;
+  margin: 0 8px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+main header button:hover{
+  filter: brightness(1.1);
+}
+
+/*main content offset for fixed elements*/
+main{
+  margin-left: var(--menuw);
+  padding-top: calc(var(--headerh) + 26px);
+  padding-left: var(--pad);
+  padding-right: var(--pad);
+  padding-bottom: 90px;
+}
+
+main h1{
+  text-align: center;
+  font-size: 48px;
+  margin: 20px 0 28px 0;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/*responsive article layout with fixed card width*/
+#container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--gap);
+}
+
+#container article{
+  width: 300px;
+  background: var(--cardbg);
+  border: 1px solid var(--cardborder);
+  padding: 16px 18px 14px 18px;
+  line-height: 1.55;
+}
+
+#container article h2{
+  margin: 0 0 10px 0;
+  font-size: 22px;
+}
+
+#container article p{
+  margin: 0 0 12px 0;
+  font-size: 14px;
+}
+
+#container article a{
+  color: var(--menulink);
+}
+
+/*thank you message fixed bottom right*/
+#thanks{
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 1100;
+  background: var(--thanksbg);
+  border: 2px solid var(--thanksborder);
+  padding: 16px 24px;
+  font-size: 30px;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+/*footer remains in normal document flow*/
+footer{
+  margin-top: 60px;
+  padding: 18px 12px;
+}
+
+/*responsive adjustment for narrow screens*/
+@media (max-width: 720px){
+  :root{
+    --menuw: 180px;
+    --headerh: 100px;
+  }
+
+  main header button{
+    margin: 0 6px;
+    padding: 9px 14px;
+    font-size: 16px;
+  }
+
+  #thanks{
+    font-size: 22px;
+    padding: 12px 14px;
+  }
+}
