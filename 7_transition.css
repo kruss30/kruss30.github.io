@@ -22,12 +22,14 @@ body{
   --headerh: 120px;
   --gap: 24px;
 
+  /*ucf colors*/
   --ucf-gold: #ffc904;
   --ucf-black: #000000;
   --ucf-white: #ffffff;
 
-  --lighttext: #b9b9b9;
-  --darktext: #1f1f1f;
+  /*article text states*/
+  --lighttext: #b7b7b7;
+  --darktext: #1b1b1b;
 }
 
 /*left navigation bar*/
@@ -46,9 +48,9 @@ body{
 #menuItems button{
   width: 100%;
   display: block;
-  background: #0016ff;
-  color: var(--ucf-white);
-  border: 1px solid #0b0b0b;
+  background: var(--ucf-gold);
+  color: var(--ucf-black);
+  border: 1px solid var(--ucf-black);
   padding: 14px 12px;
   font-size: 18px;
   cursor: pointer;
@@ -56,7 +58,7 @@ body{
 
 /*hover color change for navigation buttons*/
 #menuItems button:hover{
-  background: var(--ucf-gold);
+  background: var(--ucf-white);
   color: var(--ucf-black);
 }
 
@@ -65,10 +67,7 @@ body{
   list-style: none;
   padding: 0;
   margin: 0;
-
-  /*hidden by default*/
   display: none;
-
   background: var(--ucf-gold);
   border-bottom: 2px solid var(--ucf-black);
 }
@@ -93,14 +92,14 @@ body{
   display: block;
   padding: 10px 12px;
   text-decoration: none;
-  color: #0016ff;
+  color: var(--ucf-black);
   font-size: 18px;
 }
 
 /*hover style for dropdown links*/
 #jumpMenu a:hover{
-  background: #0016ff;
-  color: var(--ucf-white);
+  background: var(--ucf-black);
+  color: var(--ucf-gold);
 }
 
 /*main content area offset for fixed left nav*/
@@ -116,11 +115,11 @@ main header{
   left: var(--navw);
   width: calc(100% - var(--navw));
   height: var(--headerh);
-  background: #e23a2f;
+  background: var(--ucf-black);
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 3px solid var(--ucf-black);
+  border-bottom: 4px solid var(--ucf-gold);
   z-index: 1000;
 }
 
@@ -128,7 +127,7 @@ main header p{
   margin: 0;
   font-size: 34px;
   font-weight: bold;
-  color: var(--ucf-black);
+  color: var(--ucf-white);
   font-family: Georgia, "Times New Roman", serif;
 }
 
@@ -160,6 +159,7 @@ main h1{
   padding: 16px 18px;
   transform: scale(1);
   transition: transform 2s;
+  scroll-margin-top: calc(var(--headerh) + 24px);
 }
 
 /*lightly-colored article text by default*/
@@ -190,7 +190,7 @@ main h1{
 }
 
 #container article p:last-of-type a{
-  color: #0016ff;
+  color: var(--ucf-black);
   text-decoration: underline;
   font-size: 14px;
 }
@@ -214,14 +214,14 @@ a[href^="https://www.google.com"]::after{
   right: 16px;
   bottom: 16px;
   margin: 0;
-  background: #b8d7f0;
-  border: 2px solid var(--ucf-black);
+  background: var(--ucf-white);
+  border: 3px solid var(--ucf-black);
   padding: 18px 22px;
   z-index: 1200;
 }
 
 #thanks a{
-  color: #0016ff;
+  color: var(--ucf-black);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 32px;
 }
