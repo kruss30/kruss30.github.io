@@ -2,119 +2,139 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kyle Russell – Resume</title>
+  <link rel="stylesheet" href="resume.css">
 </head>
 <body>
 
-<header>
-  <h1>Kyle Russell</h1>
-  <p>
-    Email: <a href="mailto:Ky006697@ucf.edu">Ky006697@ucf.edu</a><br>
-    LinkedIn: <a href="https://www.linkedin.com/">linkedin.com</a>
-  </p>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="identity">
+      <h1>Kyle Russell</h1>
+      <p class="contact">
+        Email: <a href="mailto:Ky006697@ucf.edu">Ky006697@ucf.edu</a>
+        <span class="dot" aria-hidden="true">•</span>
+        LinkedIn: <a href="https://www.linkedin.com/">linkedin.com</a>
+      </p>
+    </div>
 
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="pizza.html">Pizza Form</a> |
-    <a href="resume.html">Resume</a> |
-    <a href="project1.html">Project 1</a> |
-    <a href="project2.html">Project 2</a>
-  </nav>
-  <hr>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="pizza.html">Pizza Form</a>
+      <a href="resume.html" aria-current="page">Resume</a>
+      <a href="project1.html">Project 1</a>
+      <a href="project2.html">Project 2</a>
+    </nav>
+  </div>
 </header>
 
-<main>
+<main class="container resume-layout">
 
-<section>
-  <h2>Professional Objective</h2>
-  <p>
-    Computer Science student with a focus on cybersecurity and secure systems,
-    seeking internship opportunities to apply hands-on experience in system
-    hardening, security auditing, and defensive cyber operations.
-  </p>
-</section>
+  <section class="card main-content" aria-label="Resume main content">
 
-<section>
-  <h2>Education</h2>
-  <article>
-    <h3>University of Central Florida</h3>
-    <p>
-      B.S. in Computer Science, Minor in Secure Computing and Networks<br>
-      Expected Graduation: May 2027
-    </p>
-  </article>
+    <section>
+      <h2>Professional Objective</h2>
+      <p>
+        Computer Science student with a focus on cybersecurity and secure systems,
+        seeking internship opportunities to apply hands-on experience in system
+        hardening, security auditing, and defensive cyber operations.
+      </p>
+    </section>
 
-  <article>
-    <h3>University of Florida</h3>
-    <p>
-      Lower-division coursework completed prior to transfer
-    </p>
-  </article>
-</section>
+    <section>
+      <h2>Education</h2>
 
-<section>
-  <h2>Professional Experience</h2>
+      <article class="item">
+        <header class="item-header">
+          <h3>University of Central Florida</h3>
+          <p class="meta">Expected Graduation: May 2027</p>
+        </header>
+        <p>B.S. in Computer Science, Minor in Secure Computing and Networks</p>
+      </article>
 
-  <article>
-    <h3>Cyber Security Intern</h3>
-    <p>
-      Indian River County Board of County Commissioners<br>
-      Aug 2023 – May 2024
-    </p>
-    <ul>
-      <li>Conducted security audits and risk assessments using the NIST framework.</li>
-      <li>Established and enforced DISA STIG baselines across Windows servers and endpoints.</li>
-      <li>Automated compliance checks using SCAP, improving compliance by 13%.</li>
-      <li>Deployed hardened configurations using Group Policy Objects.</li>
-      <li>Created cybersecurity documentation and user guides using DokuWiki.</li>
-    </ul>
-  </article>
+      <article class="item">
+        <header class="item-header">
+          <h3>University of Florida</h3>
+        </header>
+        <p>Lower-division coursework completed prior to transfer</p>
+      </article>
+    </section>
 
-  <article>
-    <h3>Front Desk Agent</h3>
-    <p>
-      Hilton Hotels & Resorts<br>
-      May 2023 – December 2024
-    </p>
-  </article>
+    <section>
+      <h2>Professional Experience</h2>
 
-  <article>
-    <h3>Barista</h3>
-    <p>
-      Starbucks Corporation<br>
-      March 2020 – January 2023
-    </p>
-  </article>
-</section>
+      <article class="item">
+        <header class="item-header">
+          <h3>Cyber Security Intern</h3>
+          <p class="meta">Indian River County Board of County Commissioners • Aug 2023 – May 2024</p>
+        </header>
+        <ul>
+          <li>Conducted security audits and risk assessments using the NIST framework.</li>
+          <li>Established and enforced DISA STIG baselines across Windows servers and endpoints.</li>
+          <li>Automated compliance checks using SCAP, improving compliance by 13%.</li>
+          <li>Deployed hardened configurations using Group Policy Objects.</li>
+          <li>Created cybersecurity documentation and user guides using DokuWiki.</li>
+        </ul>
+      </article>
 
-<section>
-  <h2>Projects</h2>
-  <ul>
-    <li>
-      <a href="project1.html">PL/0 Compiler and Virtual Machine (C)</a>
-    </li>
-    <li>
-      <a href="project2.html">eCitadel Blue Team Defense (Windows Server 2022)</a>
-    </li>
-  </ul>
-</section>
+      <article class="item">
+        <header class="item-header">
+          <h3>Front Desk Agent</h3>
+          <p class="meta">Hilton Hotels & Resorts • May 2023 – December 2024</p>
+        </header>
+      </article>
 
+      <article class="item">
+        <header class="item-header">
+          <h3>Barista</h3>
+          <p class="meta">Starbucks Corporation • March 2020 – January 2023</p>
+        </header>
+      </article>
+    </section>
 
-<section>
-  <h2>Skills</h2>
-  <ul>
-    <li>Programming: Java, Python, C, C++, PowerShell</li>
-    <li>Cybersecurity: DISA STIGs, SCAP, Active Directory, Group Policy</li>
-    <li>Tools: GitHub, Splunk, BloodHound, DokuWiki</li>
-    <li>Networking & Web Testing: Nmap, Wireshark, Burp Suite, sqlmap, Gobuster</li>
-  </ul>
-</section>
+    <section>
+      <h2>Projects</h2>
+      <ul class="link-list">
+        <li><a href="project1.html">PL/0 Compiler and Virtual Machine (C)</a></li>
+        <li><a href="project2.html">eCitadel Blue Team Defense (Windows Server 2022)</a></li>
+      </ul>
+    </section>
+
+  </section>
+
+  <aside class="card sidebar" aria-label="Resume sidebar">
+    <section>
+      <h2>Skills</h2>
+      <ul class="pill-list">
+        <li>Java</li>
+        <li>Python</li>
+        <li>C</li>
+        <li>C++</li>
+        <li>PowerShell</li>
+        <li>DISA STIGs</li>
+        <li>SCAP</li>
+        <li>Active Directory</li>
+        <li>Group Policy</li>
+        <li>GitHub</li>
+        <li>Splunk</li>
+        <li>BloodHound</li>
+        <li>DokuWiki</li>
+        <li>Nmap</li>
+        <li>Wireshark</li>
+        <li>Burp Suite</li>
+        <li>sqlmap</li>
+        <li>Gobuster</li>
+      </ul>
+    </section>
+  </aside>
 
 </main>
 
-<footer>
-  <hr>
-  <p>Full resume submitted via WebCourses.</p>
+<footer class="site-footer">
+  <div class="container">
+    <p>Full resume submitted via WebCourses.</p>
+  </div>
 </footer>
 
 </body>
