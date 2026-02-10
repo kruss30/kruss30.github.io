@@ -1,6 +1,4 @@
-/*genai was used as a reference for ideas. final styling choices, selector decisions, and refinements were made by me.*/
-
-/* base */
+/* base reset */
 * {
   box-sizing: border-box;
 }
@@ -10,27 +8,33 @@ html, body {
   padding: 0;
 }
 
+/* color palette */
+:root {
+  --bg-main: #0f172a;
+  --bg-card: #020617;
+  --border-subtle: #1e293b;
+  --text-main: #e5e7eb;
+  --text-muted: #94a3b8;
+  --accent: #22c55e;
+}
+
+/* body */
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.55;
-  background: #f4f6f9;
-  color: #111827;
+  background: var(--bg-main);
+  color: var(--text-main);
 }
 
 /* links */
 a {
-  color: #1f4fd6;
+  color: var(--accent);
   text-decoration: none;
 }
 
 a:hover,
 a:focus {
   text-decoration: underline;
-}
-
-a:focus {
-  outline: 2px solid #93c5fd;
-  outline-offset: 2px;
 }
 
 /* layout helpers */
@@ -40,18 +44,18 @@ a:focus {
   padding: 16px;
 }
 
+/* cards */
 .card {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
   padding: 18px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
 }
 
 /* header */
 .site-header {
-  background: #0b1220;
-  color: #e5e7eb;
+  background: #020617;
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .header-inner {
@@ -64,50 +68,48 @@ a:focus {
 }
 
 .identity h1 {
-  font-size: 28px;
   margin: 0 0 6px 0;
-  letter-spacing: 0.2px;
+  font-size: 26px;
+  letter-spacing: 0.4px;
 }
 
 .contact {
   margin: 0;
-  color: #cbd5e1;
-}
-
-.site-header a {
-  color: #e5e7eb;
+  color: var(--text-muted);
 }
 
 .dot {
   margin: 0 10px;
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 /* nav */
 .site-nav {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
-  justify-content: flex-end;
 }
 
 .site-nav a {
-  padding: 8px 10px;
-  border-radius: 10px;
-  background: rgba(255,255,255,0.06);
+  padding: 6px 10px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  color: var(--text-main);
 }
 
 .site-nav a:hover,
 .site-nav a:focus {
-  background: rgba(255,255,255,0.12);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .site-nav a[aria-current="page"] {
-  background: rgba(255,255,255,0.16);
-  font-weight: 700;
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 600;
 }
 
-/* resume layout (desktop default) */
+/* resume layout */
 .resume-layout {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -120,22 +122,22 @@ a:focus {
 .main-content section + section {
   margin-top: 18px;
   padding-top: 14px;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px dashed var(--border-subtle);
 }
 
 /* headings */
 h2 {
-  font-size: 16px;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
   margin: 0 0 10px 0;
-  color: #111827;
+  font-size: 14px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--accent);
 }
 
 h3 {
-  font-size: 16px;
   margin: 0;
-  color: #111827;
+  font-size: 16px;
+  color: var(--text-main);
 }
 
 /* items */
@@ -144,24 +146,24 @@ h3 {
 }
 
 .item + .item {
-  border-top: 1px solid #eef2f7;
+  border-top: 1px solid var(--border-subtle);
 }
 
 .item-header {
   display: flex;
-  gap: 10px;
-  align-items: baseline;
   justify-content: space-between;
+  gap: 10px;
   flex-wrap: wrap;
   margin-bottom: 6px;
 }
 
 .meta {
   margin: 0;
-  color: #4b5563;
   font-size: 14px;
+  color: var(--text-muted);
 }
 
+/* lists */
 ul {
   margin: 10px 0 0 18px;
   padding: 0;
@@ -171,13 +173,17 @@ li {
   margin: 6px 0;
 }
 
-/* projects */
+li::marker {
+  color: var(--accent);
+}
+
+/* project links */
 .link-list {
   margin: 0;
   padding-left: 18px;
 }
 
-/* skills pills */
+/* skills */
 .pill-list {
   list-style: none;
   margin: 0;
@@ -188,18 +194,18 @@ li {
 }
 
 .pill-list li {
-  margin: 0;
   padding: 6px 10px;
-  border: 1px solid #e5e7eb;
-  border-radius: 999px;
-  background: #f9fafb;
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
   font-size: 13px;
-  color: #1f2937;
+  color: var(--accent);
+  background: #020617;
 }
 
 /* footer */
 .site-footer {
-  color: #4b5563;
+  border-top: 1px solid var(--border-subtle);
+  color: var(--text-muted);
   padding-bottom: 18px;
 }
 
@@ -208,15 +214,11 @@ li {
   font-size: 14px;
 }
 
-/* responsive: mobile layout */
+/* responsive */
 @media (max-width: 700px) {
   .header-inner {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .site-nav {
-    justify-content: flex-start;
   }
 
   .resume-layout {
@@ -224,11 +226,7 @@ li {
   }
 
   .identity h1 {
-    font-size: 24px;
-  }
-
-  .card {
-    border-radius: 10px;
+    font-size: 22px;
   }
 
   .item-header {
