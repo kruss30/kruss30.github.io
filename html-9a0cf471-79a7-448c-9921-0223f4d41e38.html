@@ -4,7 +4,7 @@
         <title>Recent Journal Articles</title>
         <link rel="stylesheet" href="10_css.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<script src=""></script>
+		<script src="hw6.js"></script>
     </head>
 
     <body>
@@ -39,10 +39,15 @@
                     </div>
                     
                     <div class="formRow">
-                            <label>Type:</label>
-                            <input name="articleType" id="opinionRadio" type="radio"> <label for="opinionRadio">Opinion</label>
-                            <input name="articleType" id="recipeRadio" type="radio"> <label for="recipeRadio">Recipe</label>
-                            <input name="articleType" id="lifeRadio" type="radio"> <label for="lifeRadio">Life Update</label>
+                        <label>Type:</label>
+						<input name="articleType" id="opinionRadio" type="radio" value="opinion" checked>
+						<label for="opinionRadio">Opinion</label>
+
+						<input name="articleType" id="recipeRadio" type="radio" value="recipe">
+						<label for="recipeRadio">Recipe</label>
+
+						<input name="articleType" id="lifeRadio" type="radio" value="update">
+						<label for="lifeRadio">Life Update</label>
                     </div>
 
                     <div class="formRow">
@@ -153,4 +158,5 @@
             </footer>
         </main>
     </body>
+
 </html>
