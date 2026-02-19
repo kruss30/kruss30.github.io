@@ -1,4 +1,4 @@
-
+//genai was used as a reference for css selectors and transition ideas. final styling choices, selector decisions, and refinements were made by me.
 
 //toggle filter form visibility and hide add form
 function showFilter() {
