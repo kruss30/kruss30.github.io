@@ -1,102 +1,124 @@
 //genai was used as a reference for css selectors and transition ideas. final styling choices, selector decisions, and refinements were made by me.
 
-//toggle filter form visibility and hide add form
 function showFilter() {
-  const filterForm = document.getElementById("filterContent");
-  const addForm = document.getElementById("newContent");
+  var filterForm = document.getElementById("filterContent");
+  var addForm = document.getElementById("newContent");
 
+  //hide the other panel
   addForm.style.display = "none";
 
-  if (filterForm.style.display === "flex") {
-    filterForm.style.display = "none";
-  } else {
+  //toggle this one
+  if (filterForm.style.display === "none" || filterForm.style.display === "") {
     filterForm.style.display = "flex";
     filterForm.style.flexDirection = "column";
     filterForm.style.alignItems = "center";
+  } else {
+    filterForm.style.display = "none";
   }
 }
 
-//toggle add form visibility and hide filter form
 function showAddNew() {
-  const filterForm = document.getElementById("filterContent");
-  const addForm = document.getElementById("newContent");
+  var filterForm = document.getElementById("filterContent");
+  var addForm = document.getElementById("newContent");
 
+  //hide the other panel
   filterForm.style.display = "none";
 
-  if (addForm.style.display === "flex") {
-    addForm.style.display = "none";
-  } else {
+  //toggle this one
+  if (addForm.style.display === "none" || addForm.style.display === "") {
     addForm.style.display = "flex";
+  } else {
+    addForm.style.display = "none";
   }
 }
 
-//hide/show articles based on checkboxes
 function filterArticles() {
-  const showOpinion = document.getElementById("opinionCheckbox").checked;
-  const showRecipe = document.getElementById("recipeCheckbox").checked;
-  const showUpdate = document.getElementById("updateCheckbox").checked;
+  var showOpinion = document.getElementById("opinionCheckbox").checked;
+  var showRecipe = document.getElementById("recipeCheckbox").checked;
+  var showUpdate = document.getElementById("updateCheckbox").checked;
 
-  const articles = document.querySelectorAll("#articleList article");
+  var articles = document.querySelectorAll("#articleList article");
 
-  articles.forEach((article) => {
-    if (article.classList.contains("opinion")) {
-      article.hidden = !showOpinion;
-    } else if (article.classList.contains("recipe")) {
-      article.hidden = !showRecipe;
-    } else if (article.classList.contains("update")) {
-      article.hidden = !showUpdate;
+  for (var i = 0; i < articles.length; i++) {
+    var a = articles[i];
+
+    if (a.classList.contains("opinion")) {
+      a.hidden = !showOpinion;
+    } else if (a.classList.contains("recipe")) {
+      a.hidden = !showRecipe;
+    } else if (a.classList.contains("update")) {
+      a.hidden = !showUpdate;
     }
-  });
+  }
 }
 
-//create and append a new article with correct styling
 function addNewArticle() {
-  const title = document.getElementById("inputHeader").value.trim();
-  const text = document.getElementById("inputArticle").value.trim();
-  const typeInput = document.querySelector('input[name="articleType"]:checked');
+  var title = document.getElementById("inputHeader").value.trim();
+  var text = document.getElementById("inputArticle").value.trim();
 
-  if (!title || !text || !typeInput) {
-    alert("Please enter a title, choose a type, and enter text.");
+  var picked = document.querySelector('input[name="articleType"]:checked');
+  if (picked === null) {
+    alert("Please choose an article type.");
+    return;
+  }
+  var type = picked.value; //opinion, recipe, update
+
+  if (title === "" || text === "") {
+    alert("Please enter a title and text.");
     return;
   }
 
-  const type = typeInput.value; //opinion, recipe, update
-  const markerText = type === "update" ? "Update" : (type.charAt(0).toUpperCase() + type.slice(1));
+  //create the article
+  var article = document.createElement("article");
+  article.className = type;
 
-  const article = document.createElement("article");
-  article.classList.add(type);
+  //badge text
+  var badgeText = "Opinion";
+  if (type === "recipe") badgeText = "Recipe";
+  if (type === "update") badgeText = "Update";
 
-  const marker = document.createElement("span");
-  marker.classList.add("marker");
-  marker.textContent = markerText;
+  //marker
+  var marker = document.createElement("span");
+  marker.className = "marker";
+  marker.textContent = badgeText;
 
-  const h2 = document.createElement("h2");
+  //title
+  var h2 = document.createElement("h2");
   h2.textContent = title;
 
-  const pText = document.createElement("p");
-  pText.textContent = text;
+  //body
+  var p = document.createElement("p");
+  p.textContent = text;
 
-  const pLink = document.createElement("p");
-  const a = document.createElement("a");
-  a.href = "moreDetails.html";
-  a.textContent = "Read more...";
-  pLink.appendChild(a);
+  //read more
+  var p2 = document.createElement("p");
+  var link = document.createElement("a");
+  link.href = "moreDetails.html";
+  link.textContent = "Read more...";
+  p2.appendChild(link);
 
+  //assemble
   article.appendChild(marker);
   article.appendChild(h2);
-  article.appendChild(pText);
-  article.appendChild(pLink);
+  article.appendChild(p);
+  article.appendChild(p2);
 
+  //add to page
   document.getElementById("articleList").appendChild(article);
 
-  //reset inputs
+  //clear inputs
   document.getElementById("inputHeader").value = "";
   document.getElementById("inputArticle").value = "";
   document.getElementById("opinionRadio").checked = true;
 
-  //apply current filters to the new article
+  //make sure new article respects current filter settings
   filterArticles();
 }
+
+//optional: apply filter on first load so the page matches checkbox defaults
+document.addEventListener("DOMContentLoaded", function () {
+  filterArticles();
+});
 
 //apply filters on initial load too
 document.addEventListener("DOMContentLoaded", () => {
