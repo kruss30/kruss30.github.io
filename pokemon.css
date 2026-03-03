@@ -1,0 +1,106 @@
+/*note: genai was used as a reference for layout ideas and css syntax.
+final styling adjustments and structure decisions were made by me.*/
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #a8d4e6;
+}
+
+.card {
+  width: min(650px, 92vw);
+  margin: 28px auto;
+  padding: 24px 26px;
+  background: #ffffff;
+  border: 5px solid #d7a21a;
+  border-radius: 24px;
+  box-sizing: border-box;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 14px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.searchRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.label {
+  font-weight: 600;
+}
+
+.status {
+  text-align: center;
+  min-height: 18px;
+  margin: 8px 0 10px 0;
+}
+
+.preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 210px;
+}
+
+#pokeImg {
+  width: 180px;
+  height: 180px;
+  image-rendering: pixelated;
+  display: none;
+}
+
+#pokeAudio {
+  width: 100%;
+  display: none;
+  margin: 10px 0 14px 0;
+}
+
+.movesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 18px;
+  margin: 10px 0 14px 0;
+}
+
+select {
+  width: 100%;
+}
+
+#btnAdd {
+  display: block;
+  margin: 0 auto;
+  padding: 6px 16px;
+}
+
+.team {
+  margin-top: 16px;
+}
+
+#teamTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#teamTable td {
+  border: 1px solid #000;
+  vertical-align: top;
+  padding: 10px;
+}
+
+.teamSprite {
+  width: 70px;
+  height: 70px;
+  image-rendering: pixelated;
+}
+
+.movesList {
+  margin: 0;
+  padding-left: 18px;
+}
